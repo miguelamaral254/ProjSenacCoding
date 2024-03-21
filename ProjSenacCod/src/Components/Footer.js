@@ -13,7 +13,7 @@ const Footer = () => {
         </div>
         <div>
           <p>
-            nstituição de educação profissional aberta a toda a sociedade, com a
+            A instituição de educação profissional aberta a toda a sociedade, com a
             missão de desenvolver pessoas e organizações para o mundo do
             trabalho. O Serviço Nacional de Aprendizagem Comercial – Senac,
             pessoa jurídica de direito privado, sem fins lucrativos, foi criado
