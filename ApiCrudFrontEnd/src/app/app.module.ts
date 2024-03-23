@@ -21,9 +21,10 @@ import { RegisterComponent } from './pages/register/register.component';
 import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
 import { EditComponent } from './pages/edit/edit.component';
 import { DetailsComponent } from './pages/details/details.component';
+import { DeleteComponent } from './components/delete/delete.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, RegisterComponent, EmployeeFormComponent, EditComponent, DetailsComponent],
+  declarations: [AppComponent, HomeComponent, RegisterComponent, EmployeeFormComponent, EditComponent, DetailsComponent, DeleteComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

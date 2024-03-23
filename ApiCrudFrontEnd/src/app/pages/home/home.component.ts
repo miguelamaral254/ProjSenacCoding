@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteComponent } from 'src/app/components/delete/delete.component';
 import { Employee } from 'src/app/models/Employee';
 import { EmployeeService } from 'src/app/services/employee.service';
 
@@ -8,11 +10,22 @@ import { EmployeeService } from 'src/app/services/employee.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  employee: Employee[] = [];
+  employees: Employee[] = [];
   genEmployee: Employee[] = [];
 
-  columns = ['Active','Name', 'LastName', 'Department', 'Actions', 'Delete' ]
-  constructor(private employeeService: EmployeeService) {}
+  columnsToDisplay = [
+    'Active',
+    'Name',
+    'LastName',
+    'Department',
+    'Actions',
+    'Delete',
+  ];
+
+  constructor(
+    private employeeService: EmployeeService,
+    public dialog: MatDialog
+  ) {}
   ngOnInit(): void {
     this.employeeService.GetEmployees().subscribe((data) => {
       const datas = data.data;
@@ -25,19 +38,28 @@ export class HomeComponent implements OnInit {
         );
       });
       //console.log(datas)
-      this.employee = data.data;
+      this.employees = data.data;
       this.genEmployee = data.data;
 
       //console.log(this.employee)
       // console.log(this.genEmployee)
     });
   }
-  search(event : Event){
+  search(event: Event) {
     const target = event.target as HTMLInputElement;
     const value = target.value.toLowerCase();
-    console.log(value)
-    this.employee =this.genEmployee.filter(employee => {
+    console.log(value);
+    this.employees = this.genEmployee.filter((employee) => {
       return employee.name.toLowerCase().includes(value);
-    })
+    });
+  }
+  OpenDialog(id: number) {
+    this.dialog.open(DeleteComponent, {
+      width: '450px',
+      height: "450px",
+      data: {
+        id : id
+      }
+    });
   }
 }

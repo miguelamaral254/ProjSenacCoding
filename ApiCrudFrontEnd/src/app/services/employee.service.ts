@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 import { Response } from '../models/Response';
 import { Employee } from '../models/Employee';
@@ -16,7 +16,7 @@ export class EmployeeService {
   GetEmployees(): Observable<Response<Employee[]>> {
     return this.http.get<Response<Employee[]>>(this.apiUrl);
   }
-  GetEmployee(id : number): Observable<Response<Employee>> {
+  GetEmployee(id: number): Observable<Response<Employee>> {
     return this.http.get<Response<Employee>>(`${this.apiUrl}/${id}`);
   }
 
@@ -25,11 +25,17 @@ export class EmployeeService {
     return this.http.post<Response<Employee[]>>(`${this.apiUrl}`, employee);
   }
 
-  EditEmployee(employee : Employee) : Observable<Response<Employee[]>> {
-    return this.http.put<Response<Employee[]>>(`${this.apiUrl}`,employee);
+  EditEmployee(employee: Employee): Observable<Response<Employee[]>> {
+    return this.http.put<Response<Employee[]>>(`${this.apiUrl}`, employee);
   }
 
-  ShutDownEmployee(id: number) : Observable<Response<Employee[]>>{
-    return this.http.put<Response<Employee[]>>(`${this.apiUrl}/shutDownEmployee?id=${id}`, id);
-}
+  ShutDownEmployee(id: number): Observable<Response<Employee[]>> {
+    return this.http.put<Response<Employee[]>>(
+      `${this.apiUrl}/shutDownEmployee?id=${id}`,
+      id
+    );
+  }
+  DeleteEmployee(id: number): Observable<Response<Employee[]>> {
+    return this.http.delete<Response<Employee[]>>(`${this.apiUrl}?id=${id}`);
+  }
 }
