@@ -61,7 +61,9 @@ nav {
   font-size: 1.1rem;
   font-weight: 600;
 }
-
+.nav-btn {
+  cursor: pointer;
+}
 .navbar-menu-container {
   display: none; /* Oculta o menu em telas grandes */
 }

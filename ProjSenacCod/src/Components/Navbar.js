@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from "../Assets/Senac_logo.svg.png";
 import { BsCart2 } from "react-icons/bs";
 import { HiOutlineBars3 } from "react-icons/hi2";
+import { Link } from "@mui/material";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -11,7 +12,7 @@ const Navbar = () => {
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
-    setOpenMenu(false);   
+    setOpenMenu(false);
   };
 
   return (
@@ -20,19 +21,19 @@ const Navbar = () => {
         <img src={logo} alt="" width="90px" height="90px" />
       </div>
       <div className="navbar-links-container">
-        <a href="" onClick={() => scrollToSection("home")}>
-          Home
-        </a>
-        <a href="#" onClick={() => scrollToSection("about")}>
-          Sobre
-        </a>
-        <a href="#" onClick={() => scrollToSection("work")}>
-          Como funciona?
-        </a>
-       
-        <a href="#" onClick={() => scrollToSection("contact")}>
-          Contatos
-        </a>
+        <Link onClick={() => scrollToSection("home")}>
+          <p className="nav-btn">Home</p>
+        </Link>
+        <Link onClick={() => scrollToSection("about")}>
+          <p className="nav-btn">Sobre</p>
+        </Link>
+        <Link onClick={() => scrollToSection("work")}>
+          <p className="nav-btn">Como funciona?</p>
+        </Link>
+        <Link onClick={() => scrollToSection("contact")}>
+          <p className="nav-btn">Contatos</p>
+        </Link>
+
         <a href="#">
           <BsCart2 className="navbar-cart-icon" />
         </a>
