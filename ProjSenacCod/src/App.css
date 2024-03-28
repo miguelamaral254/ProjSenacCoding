@@ -34,7 +34,6 @@ nav {
   min-height: 90px;
 }
 
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -45,7 +44,7 @@ nav {
   position: fixed; /* Torna a barra de navegação fixa */
   width: 100%; /* Ocupa toda a largura da tela */
   top: 0; /* Fixa a barra de navegação no topo */
-  left:5px;
+  left: 5px;
   z-index: 1000; /* Define a ordem de empilhamento para garantir que a barra de navegação fique acima de outros elementos */
 }
 
@@ -132,8 +131,8 @@ nav {
   max-width: 600px;
 }
 h2 {
-  color:#4c4c4c ;
-  font-size: clamp(1rem, 2vw,2rem);
+  color: #4c4c4c;
+  font-size: clamp(1rem, 2vw, 2rem);
 }
 .primary-text {
   font-size: clamp(1rem, 3vw, 1.5rem);
@@ -306,13 +305,13 @@ h2 {
 }
 
 .testimonial-card {
-  width: 30%; 
+  width: 30%;
   margin-right: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  flex-direction: column; 
+  flex-direction: column;
 }
 .work-section-wrapper {
   margin-top: 15rem;
@@ -475,6 +474,7 @@ h2 {
     max-width: 95vw;
   }
 }
+
 @media (max-width: 600px) {
   .home-bannerImage-container,
   .about-background-image-container {
